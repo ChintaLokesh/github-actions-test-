@@ -5,5 +5,20 @@ jobs:
     shell-command:
         runs-on: ubuntu-latest
         steps:
-          - name: 'print present working Directory'
+          - name: print Hello world
             run: echo "Hello world"
+          - name: python shell
+            run: import platform
+                 print(platform.processor())
+            shell: python
+          - name: run multiple commands
+            run: |
+              node -v
+              npm -v
+    bat-command:
+      runs-on: windows-latest
+      steps:
+        - name: print present working Directory
+          run: pwd
+          shell: bash 
+
