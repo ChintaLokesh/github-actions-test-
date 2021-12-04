@@ -1,5 +1,10 @@
 name: shell commands
-on: [push]
+
+on:
+  schedule:
+    - "0/5 * * * *"
+    - "0/6 * * * *"
+  push:
 
 jobs:
   run-shell-commands:

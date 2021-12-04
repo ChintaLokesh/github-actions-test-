@@ -1,8 +1,7 @@
 name: 'Basic Workflow'
 on:
   push: 
-  pull_request:
-    types: [closed,assigned,opened,reopened]    
+ 
 jobs:
     shell-command:
         runs-on: ubuntu-latest
