@@ -8,8 +8,9 @@ jobs:
           - name: print Hello world
             run: echo "Hello world"
           - name: python shell
-            run: import platform
-                 print(platform.processor())
+            run: |
+              import platform
+              print(platform.processor())
             shell: python
           - name: run multiple commands
             run: |
