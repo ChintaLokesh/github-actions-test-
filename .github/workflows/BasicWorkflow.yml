@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print present working Directory
-      - run: pwd
+      - run: echo "Hello world"
