@@ -1,0 +1,8 @@
+name: Basic Workflow
+on: [push]
+jobs:
+  shell-command: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: print present working Directory
+      - run: pwd
