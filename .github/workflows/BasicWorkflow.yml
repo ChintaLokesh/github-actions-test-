@@ -1,8 +1,9 @@
-name: Basic Workflow
-on: [push]
+name: 'Basic Workflow'
+on:
+    - push
 jobs:
-  shell-command: 
-    runs-on: ubuntu-latest
-    steps:
-      - name: print present working Directory
-      - run: echo "Hello world"
+    shell-command:
+        runs-on: ubuntu-latest
+        steps:
+          - name: 'print present working Directory'
+            run: echo "Hello world"
