@@ -1,7 +1,7 @@
 name: contexts
 on: [push]
 jobs:
-  get in json format:
+  getInJsonFormat:
     runs-on: ubuntu-latest
     steps:
       - name: Dumb github context
