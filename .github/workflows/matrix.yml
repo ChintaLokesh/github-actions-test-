@@ -1,0 +1,16 @@
+name: Run node with Different OS 
+on: [push]
+jobs:
+  Run_Node_Version:
+    strategy:
+      matrix:
+        os: [ubuntu-latest,windows-latest,macos-latest]
+        node_version: [6,8,10]
+      fail-fast: false
+    runs-on: ${{matrix.os}}
+    steps:
+      - name : Run Node Version
+        run: node -v
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node_version}}
