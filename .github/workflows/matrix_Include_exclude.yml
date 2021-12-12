@@ -1,19 +1,27 @@
-name: run node version with Include and Exclude tags
-on: [push]
-jobs: 
-  Run_Node_Version:
-    strategy:
-      matrix:
-        os: [ubuntu-latest,macos-latest,windows-latest]
-        node_version: [6,8,10]
-        exclude: 
-          - os: [windows-latest]
-            node-version: 6
-      fail-fast: false
-    runs-on: ${{matrix.os}}
-    steps:
-      - name : node_version
-        run: node -v
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{matrix.node_version}}
+name: 'run node version with Include and Exclude tags'
+on:
+    - push
+jobs:
+    Run_Node_Version:
+        strategy:
+            matrix:
+                os:
+                    - ubuntu-latest
+                    - macos-latest
+                    - windows-latest
+                node_version:
+                    - 6
+                    - 8
+                    - 10
+                exclude:
+                    - {os: [windows-latest], node_version: 6}
+            fail-fast: false
+        runs-on: '${{matrix.os}}'
+        steps:
+            -
+                name: node_version
+                run: 'node -v'
+            -
+                uses: actions/setup-node@v1
+                with:
+                    node-version: '${{matrix.node_version}}'
